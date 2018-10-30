@@ -1,38 +1,34 @@
-"""
-Imports and initialize
-"""
+# Imports
 import pygame
 import sys
+import player
 
-"""
-Global constants
-"""
+# Initialize pygame
+pygame.init()
+
+# Global constants
 SCREEN_WIDTH = 620
 SCREEN_HEIGHT = 480
 IS_RUNNING = True
 
-"""
-Colors
-"""
+# Colors
 WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 
+# Window and background
 DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load("Background.png").convert()
 background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Pyformer")
 
-class Player():
-    def __init__(self, x, y,):
-        self.x = x
-        self.y = y
-    def draw_player(self):
-        self.image = pygame.draw.rect(DISPLAYSURF, WHITE, (200, 300, self.x, self.y))
-player = Player(100, 100)
+player = player.Player(100, 100)
+
+# Main game loop
 while IS_RUNNING:
     for Event in pygame.event.get():
         if Event.type == pygame.QUIT:
             IS_RUNNING = False
 
     DISPLAYSURF.blit(background, (0,0))
-    player.draw_player()
+    player.draw_player(DISPLAYSURF, WHITE)
     pygame.display.update()
