@@ -17,6 +17,8 @@ Replace placeholder player image with an animated sprite
 
 Add floor, solid platforms, and fix player starting location
 
+Create new input handler to replace pygame key handler
+
 
 # Build the game
 
