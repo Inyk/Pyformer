@@ -9,7 +9,7 @@ to a certain degree.
 
 # Todo list 
 
-Add left and right movement
+~~Add left and right movement~~
 
 Add jump and gravity
 
