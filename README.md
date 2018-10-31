@@ -23,5 +23,5 @@ Create new input handler to replace pygame key handler
 # Build the game
 
 The game isn't anywhere close to being finished but if you want to check on my progress at any time just download the file and run
-main.py
+`main.py`
 
