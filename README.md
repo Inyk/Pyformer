@@ -11,6 +11,8 @@ to a certain degree.
 
 ~~Add left and right movement~~
 
+Figure out delta time and frame rate
+
 Add jump and gravity
 
 Replace placeholder player image with an animated sprite
