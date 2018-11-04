@@ -1,5 +1,3 @@
-import pygame
-
 # Global constants
 SCREEN_SIZE = (620, 480)
 

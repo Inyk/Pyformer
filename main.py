@@ -2,22 +2,23 @@
 import pygame
 import player
 import settings
-import sys
 
 # Create player instance
 player = player.Player(100, 100)
 
-class Game:
+
+class Game():
     """
     This class handles control flow and rendering.
     Game loop, screen updating, etc
     """
     def __init__(self):
-        self.fps(30)
+        self.fps = 30
         self.is_running = True
         self.key = pygame.key.get_pressed()
-        self.background_image = pygame.image.load("Bacground.png").convert()
-        self.window = pygame.display.set_mode(settings.SCREEN_SIZE)
+        self.bg_img = pygame.image.load("Background.png").convert()
+        self.window = pygame.display.get_surface()
+        self.deltatime = 0
 
     def event_loop(self):
             for Event in pygame.event.get():
@@ -28,19 +29,10 @@ class Game:
         """
         Render background and game surface
         """
-        self.window
-        self.background_image = pygame.transform.scale( self.background_image,
-                                                        settings.SCREEN_SIZE)
-        self.window.blit(self.background_image, (0, 0))
-        self.widndow.blit(self.background_image, (0, 0))
+        self.bg_img = pygame.transform.scale(self.bg_img, settings.SCREEN_SIZE)
+        self.window.blit(self.bg_img, (0, 0))
+        player.draw_player(self.window, settings.WHITE)
         pygame.display.update()
-
-    def key_handler(self):
-        while self.is_running:
-            if self.key[pygame.K_LEFT]:
-                player.move_left()
-            if self.key[pygame.K_RIGHT]:
-                player.move_right()
 
     def main(self):
         while self.is_running:
@@ -51,5 +43,9 @@ class Game:
 
 def main():
     pygame.init()
-    Game.main()
+    pygame.display.set_mode(settings.SCREEN_SIZE)
+    Game().main()
     pygame.quit()
+
+
+main()
