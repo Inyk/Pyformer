@@ -1,43 +1,55 @@
 # Imports
 import pygame
-import sys
 import player
-
-from settings import *
+import settings
+import sys
 
 # Create player instance
 player = player.Player(100, 100)
 
-def draw_surface(surface, background):
-    surface.blit(background, (0, 0))
+class Game:
+    """
+    This class handles control flow and rendering.
+    Game loop, screen updating, etc
+    """
+    def __init__(self):
+        self.fps(30)
+        self.is_running = True
+        self.key = pygame.key.get_pressed()
+        self.background_image = pygame.image.load("Bacground.png").convert()
+        self.window = pygame.display.set_mode(settings.SCREEN_SIZE)
+
+    def event_loop(self):
+            for Event in pygame.event.get():
+                if Event.type == pygame.QUIT:
+                    self.is_running = False
+
+    def render(self):
+        """
+        Render background and game surface
+        """
+        self.window
+        self.background_image = pygame.transform.scale( self.background_image,
+                                                        settings.SCREEN_SIZE)
+        self.window.blit(self.background_image, (0, 0))
+        self.widndow.blit(self.background_image, (0, 0))
+        pygame.display.update()
+
+    def key_handler(self):
+        while self.is_running:
+            if self.key[pygame.K_LEFT]:
+                player.move_left()
+            if self.key[pygame.K_RIGHT]:
+                player.move_right()
+
+    def main(self):
+        while self.is_running:
+            self.event_loop()
+            self.render()
+            self.key_handler()
+
 
 def main():
-    # Initialize pygame
     pygame.init()
-    
-    # Window and background
-    DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    background = pygame.image.load("Background.png").convert()
-    background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption("Pyformer")
-
-    # Loop variable
-    IS_RUNNING = True
-
-    # Main game loop
-    while IS_RUNNING:
-        clock.tick(30)
-        key = pygame.key.get_pressed()
-
-        for Event in pygame.event.get():
-            if Event.type == pygame.QUIT:
-                IS_RUNNING = False
-        if key[pygame.K_LEFT]:
-            player.move_left()
-        if key[pygame.K_RIGHT]:
-            player.move_right()
-
-        draw_surface(DISPLAYSURF, background)
-        player.draw_player(DISPLAYSURF, WHITE)
-        pygame.display.update()
-main()
+    Game.main()
+    pygame.quit()
