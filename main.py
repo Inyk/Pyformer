@@ -21,9 +21,17 @@ class Game():
         self.deltatime = 0
 
     def event_loop(self):
-            for Event in pygame.event.get():
-                if Event.type == pygame.QUIT:
-                    self.is_running = False
+        for Event in pygame.event.get():
+            if Event.type == pygame.QUIT:
+                self.is_running = False
+        self.key_handler()
+
+    def key_handler(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            player.move_left()
+        if keys[pygame.K_RIGHT]:
+            player.move_right()
 
     def render(self):
         """
@@ -37,8 +45,8 @@ class Game():
     def main(self):
         while self.is_running:
             self.event_loop()
-            self.render()
             self.key_handler()
+            self.render()
 
 
 def main():

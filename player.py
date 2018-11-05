@@ -18,10 +18,6 @@ class Player():
 
     def move_left(self):
         self.x -= self.speed
-        self.is_left = True
-        self.is_right = False
 
     def move_right(self):
         self.x += self.speed
-        self.is_right = True
-        self.is_left = False
