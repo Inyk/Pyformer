@@ -13,12 +13,11 @@ class Game():
     Game loop, screen updating, etc
     """
     def __init__(self):
-        self.fps = 30
+        self.fps = 60
         self.is_running = True
         self.key = pygame.key.get_pressed()
         self.bg_img = pygame.image.load("Background.png").convert()
         self.window = pygame.display.get_surface()
-        self.deltatime = 0
 
     def event_loop(self):
         for Event in pygame.event.get():
@@ -44,6 +43,7 @@ class Game():
 
     def main(self):
         while self.is_running:
+            settings.CLOCK.tick(30)
             self.event_loop()
             self.key_handler()
             self.render()
