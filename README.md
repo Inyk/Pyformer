@@ -9,9 +9,9 @@ to a certain degree.
 
 # Todo list 
 
-~~Add left and right movement~~
+~~Add left and right movement~~ _Added. Will probably tune it as I tune the design of the game_
 
-Figure out delta time and frame rate
+~~Figure out delta time and frame rate~~ _Clock.tick essentially works as delta time. Targeting 60 FPS so PCMasterRace doesn't yell at me_
 
 Add jump and gravity
 
@@ -19,8 +19,11 @@ Replace placeholder player image with an animated sprite
 
 Add floor, solid platforms, and fix player starting location
 
-Create new input handler to replace pygame key handler
+~~Create new input handler to replace pygame key handler~~ _Scratching this off as Pygame key handler works fine for this use case_
 
+Fix left/right boundaries.
+
+Replace player shape with a proper character sprite.
 
 # Build the game
 
