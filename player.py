@@ -40,10 +40,12 @@ class Player():
         window.blit(self.image, self.pos)
 
     def move_left(self):
-        self.speed.x = -self.accel
+        if self.pos.x > 0
+            self.speed.x = -self.accel
 
     def move_right(self):
-        self.speed.x = self.accel
+        if self.pos.x < (settings.WIDTH - self.width):
+            self.speed.x = self.accel
 
     def jump(self):
         self.y = -1
