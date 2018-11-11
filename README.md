@@ -9,7 +9,7 @@ to a certain degree.
 
 # Todo list 
 
-~~Add left and right movement~~ _Added. Will probably tune it as I tune the design of the game_
+~~Add left and right movement~~ _Added. Will probably tune it as I tune the design of the game.
 
 ~~Figure out delta time and frame rate~~ _Clock.tick essentially works as delta time. Targeting 60 FPS so PCMasterRace doesn't yell at me_
 
