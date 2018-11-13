@@ -3,11 +3,12 @@ import settings
 
 vector = pygame.math.Vector2
 
-class Player():
+class Player(pygame.sprite.Sprite):
     def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
         self.width = 50
         self.height = 50
-        self.image = pygame.Surface((50,50))
+        self.image = pygame.Surface((self.width, self.height))
         self.image.fill(settings.WHITE)
         self.rect = self.image.get_rect()
         self.rect.center = vector(tuple(x / 2 for x in settings.SCREEN_SIZE))
@@ -31,16 +32,14 @@ class Player():
             self.jump()
     
     def update(self):
-        self.speed += self.vel * self.friction
+        self.key_handler()
+        self.speed.x += self.vel.x * self.friction
         self.vel += self.speed
         self.pos += self.vel + 0.5 * self.speed
         self.rect.center = self.pos
         
-    def draw_player(self, window):
-        window.blit(self.image, self.pos)
-
     def move_left(self):
-        if self.pos.x > 0
+        if self.pos.x > 0:
             self.speed.x = -self.accel
 
     def move_right(self):
@@ -48,4 +47,4 @@ class Player():
             self.speed.x = self.accel
 
     def jump(self):
-        self.y = -1
+        pass
