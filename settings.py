@@ -14,4 +14,3 @@ BLUE = (0, 0, 255)
 
 # Clock
 CLOCK = pygame.time.Clock()
-
