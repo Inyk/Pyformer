@@ -3,7 +3,6 @@ import settings
 
 vector = pygame.math.Vector2
 
-
 class Player(pygame.sprite.Sprite):
     def __init__(self, game):
         pygame.sprite.Sprite.__init__(self)

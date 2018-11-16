@@ -25,12 +25,10 @@ class Game:
         self.platforms = pygame.sprite.Group()
         self.player = player.Player(self)
         self.all_sprites.add(self.player)
-        block1 = blocks.Platform(0, settings.HEIGHT - 40, settings.WIDTH, 40)
-        self.all_sprites.add(block1)
-        self.platforms.add(block1)
-        block2 = blocks.Platform(settings.WIDTH / 2 - 50, settings.HEIGHT * 3/4, 100, 20)
-        self.platforms.add(block2)
-        self.all_sprites.add(block2)
+        for platform in blocks.PLATFORMS:
+            p = blocks.Platform(*platform)
+            self.all_sprites.add(p)
+            self.platforms.add(p)
 
     def draw(self):
         """
