@@ -14,7 +14,7 @@ class Game:
         pygame.init()
         self.is_running = True
         self.bg_img = pygame.image.load("Background.png").convert()
-        self.bg_img = pygame.transform.scale(self.bg_img, settings.SCREEN_SIZE)    
+        self.bg_img = pygame.transform.scale(self.bg_img, settings.SCREEN_SIZE)
         self.window = pygame.display.set_mode(settings.SCREEN_SIZE)
 
     def load(self):
@@ -43,10 +43,10 @@ class Game:
         Runs every loop and update game state
         """
         self.all_sprites.update()
-        collide = pygame.sprite.spritecollide(self.player, self.platforms, False)
+        hit = pygame.sprite.spritecollide(self.player, self.platforms, False)
         if self.player.vel.y > 0:
-            if collide:
-                self.player.pos.y = collide[0].rect.top + 1
+            if hit:
+                self.player.pos.y = hit[0].rect.top + 1
                 self.player.vel.y = 0
 
     def event_loop(self):

@@ -3,6 +3,7 @@ import settings
 
 vector = pygame.math.Vector2
 
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, game):
         pygame.sprite.Sprite.__init__(self)
@@ -18,7 +19,6 @@ class Player(pygame.sprite.Sprite):
         self.is_jumping = False
         self.pos = vector(self.rect.center)
         self.vel = vector(0, 0)
-        self.speed = vector(0, 0)
         self.accel = 0.5
         self.friction = -0.12
         self.gravity = 0.5

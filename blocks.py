@@ -1,4 +1,4 @@
-# This file is called blocks instead of platform because platform.Platform started confusing me
+# Called blocks instead of platform because platform.Platform was confusing me
 # Yes I'm reminding myself why I named a file the way I did
 
 import pygame
@@ -18,5 +18,7 @@ class Platform(pygame.sprite.Sprite):
 
 
 PLATFORMS = [(0, settings.HEIGHT - 40, settings.WIDTH, 40),
-             (settings.WIDTH / 2 - 50, settings.HEIGHT * 3/4, 100, 20)
+             (settings.WIDTH / 2 - 50, settings.HEIGHT * 3/4, 100, 20),
+             (settings.WIDTH - 400, settings.HEIGHT - 250, 100, 20),
+             (settings.WIDTH - 200, settings.HEIGHT / 2, 100, 20)
              ]
