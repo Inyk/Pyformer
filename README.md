@@ -23,6 +23,8 @@ Add ~~floor~~, ~~solid platforms~~, and fix player starting location
 
 Fix left/right boundaries.
 
+Redesign the game to make it tile-based
+
 
 # Build the game
 
